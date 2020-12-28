@@ -1,32 +1,44 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <tab-bar>
+      <!--传递字符串不需要加 :,如 :path="/home"-->
+      <tab-bar-item path="/home">
+        <img slot="item-icon" src="@/assets/img/tabbar/home.svg">
+        <img slot="item-icon-active" src="@/assets/img/tabbar/home_active.svg">
+        <div slot="item-text">首页</div>
+      </tab-bar-item>
+      <tab-bar-item path="/category">
+        <img slot="item-icon" src="@/assets/img/tabbar/category.svg">
+        <img slot="item-icon-active" src="@/assets/img/tabbar/category_active.svg">
+        <div slot="item-text">分类</div>
+      </tab-bar-item>
+      <tab-bar-item path="/cart">
+        <img slot="item-icon" src="@/assets/img/tabbar/shopcart.svg">
+        <img slot="item-icon-active" src="@/assets/img/tabbar/shopcart_active.svg">
+        <div slot="item-text">购物车</div>
+      </tab-bar-item>
+      <tab-bar-item path="/profile">
+        <img slot="item-icon" src="@/assets/img/tabbar/profile.svg">
+        <img slot="item-icon-active" src="@/assets/img/tabbar/profile_active.svg">
+        <div slot="item-text">我的</div>
+      </tab-bar-item>
+    </tab-bar>
+    <router-view></router-view>
   </div>
 </template>
+<script>
+  import TabBar from '@/components/common/tabbar/TabBar.vue'
+  import TabBarItem from '@/components/common/tabbar/TabBarItem.vue'
+  export default {
+    name: 'App',
+    components: {
+      TabBar,
+      TabBarItem
+    }
+  }
 
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  @import "~@/assets/css/base.css";
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>

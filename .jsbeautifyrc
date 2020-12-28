@@ -1,0 +1,19 @@
+{
+    "brace_style": "none,preserve-inline",
+    "indent_size": 2,
+    "indent_char": " ",
+    "end_with_newline": true,
+    "unformatted": [
+        ""
+    ],
+    "html": {
+        "wrap_attributes":"auto",
+        "wrap_line_length": 120,
+        "js": {
+            "comma_first": false,
+            "indent_size": 2,
+            "indent_level":0,
+            "unindent_chained_methods": false
+        }
+    }
+}
